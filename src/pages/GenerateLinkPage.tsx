@@ -8,7 +8,7 @@ export default function GenerateLinkTool() {
     if (!guestName.trim()) return ''
     const encoded = btoa(encodeURIComponent(guestName))
 
-    return `${import.meta.env.VITE_HOST}${encoded}`
+    return `${import.meta.env.VITE_HOST}?g=${encoded}`
   }
 
   const handleGenerate = () => {
