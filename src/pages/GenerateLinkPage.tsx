@@ -40,7 +40,7 @@ export default function GenerateLinkTool() {
         <label className="mb-2 block text-sm font-medium text-gray-700">
           Chọn người mời (Tên hiển thị trên thiệp)
         </label>
-        <Select value={selectedOwner} onValueChange={setSelectedOwner}>
+        <Select onValueChange={setSelectedOwner}>
           <SelectTrigger className="mb-4 w-full focus:ring-2 focus:ring-[#C62534]">
             <SelectValue placeholder="Chọn người mời..." />
           </SelectTrigger>
