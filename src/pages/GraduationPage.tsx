@@ -123,8 +123,29 @@ export default function GraduationPage() {
 
             <GalleryCarousel images={galleryImages} />
 
-            <footer className="bg-[#C62534] py-10 text-center font-serif text-white">
-              <h2 className="text-3xl font-bold">Hẹn gặp {guestName}!</h2>
+            <footer className="bg-[#C62534] px-6 py-10 text-center font-serif text-white">
+              {/* Tiêu đề chính */}
+              <h2 className="mb-4 text-3xl font-bold tracking-wide md:text-4xl">
+                Hẹn gặp {guestName}!
+              </h2>
+
+              {/* Lời nhắn nhủ */}
+              <p className="mx-auto mb-8 max-w-lg text-sm leading-relaxed text-white/90 md:text-base">
+                Sự hiện diện của bạn là niềm vinh hạnh và là món quà ý nghĩa
+                nhất trong ngày lễ trọng đại này. Cảm ơn bạn vì đã luôn đồng
+                hành cùng mình!
+              </p>
+
+              {/* Dải phân cách mờ */}
+              <div className="mx-auto mb-8 h-px w-24 bg-white/30"></div>
+
+              {/* Thông tin liên hệ text thường */}
+              <p className="mb-2 text-sm text-white/80">
+                Liên hệ:{' '}
+                <span className="font-sans font-semibold tracking-wider">
+                  {currentOwner.phone}
+                </span>
+              </p>
             </footer>
           </div>
         </>

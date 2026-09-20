@@ -4,7 +4,7 @@ import bkhnSoictLogo from '@/assets/logo/bkhn-soict.png'
 
 export default function HeroSection({ ownerName }: { ownerName: string }) {
   return (
-    <section className="relative flex h-screen flex-col items-center justify-center bg-[#FAF8F5] px-4 text-center">
+    <section className="relative flex h-dvh flex-col items-center justify-center bg-[#FAF8F5] px-4 pb-24 text-center">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -18,7 +18,7 @@ export default function HeroSection({ ownerName }: { ownerName: string }) {
         <h2 className="mb-2 text-lg font-medium tracking-widest text-[#C62534] uppercase md:text-xl">
           Lễ Tốt Nghiệp
         </h2>
-        <h1 className="font-serif text-5xl font-bold text-gray-900 uppercase md:text-7xl">
+        <h1 className="font-serif text-4xl font-bold text-gray-900 uppercase md:text-7xl">
           {ownerName}
         </h1>
         <div className="my-6 h-1 w-20 bg-yellow-400" />
