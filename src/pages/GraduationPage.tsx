@@ -124,8 +124,7 @@ export default function GraduationPage() {
             <GalleryCarousel images={galleryImages} />
 
             <footer className="bg-[#C62534] py-10 text-center font-serif text-white">
-              <h2 className="mb-5 text-3xl font-bold">Hẹn gặp {guestName}!</h2>
-              <p className="text-xs opacity-80">Design with ❤️ by DucBunny</p>
+              <h2 className="text-3xl font-bold">Hẹn gặp {guestName}!</h2>
             </footer>
           </div>
         </>
