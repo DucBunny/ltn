@@ -1,10 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import Confetti from 'react-confetti'
-
-import img1 from '@/assets/images/1.png'
-import img2 from '@/assets/images/2.png'
-import img3 from '@/assets/images/3.png'
+import { Route } from '@/routes/$ownerId'
 
 import InteractiveBackground from '@/components/landing/InteractiveBackground'
 import WelcomeScreen from '@/components/landing/WelcomeScreen'
@@ -17,8 +14,16 @@ import EventCalendar from '@/components/landing/EventCalendar'
 import EventMap from '@/components/landing/EventMap'
 import EventCountdown from '@/components/landing/EventCountdown'
 import GalleryCarousel from '@/components/landing/GalleryCarousel'
+import RSVPForm from '@/components/landing/RSVPForm'
+import { ownerConfig } from '@/config/owners'
 
 export default function GraduationPage() {
+  const { ownerId } = Route.useParams()
+  const isValidOwner = ownerId && ownerId in ownerConfig
+  const currentOwner = isValidOwner
+    ? ownerConfig[ownerId as keyof typeof ownerConfig]
+    : ownerConfig.default
+
   const [guestName, setGuestName] = useState<string>('Bạn')
   const [windowSize, setWindowSize] = useState<{
     width: number
@@ -29,7 +34,7 @@ export default function GraduationPage() {
 
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
-  const galleryImages: string[] = [img1, img2, img3]
+  const galleryImages = currentOwner.images
 
   useEffect(() => {
     setWindowSize({ width: window.innerWidth, height: window.innerHeight })
@@ -67,11 +72,15 @@ export default function GraduationPage() {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden scroll-smooth bg-white font-sans text-gray-800">
-      <audio ref={audioRef} src="/your-background-music.mp3" loop />
+      <audio ref={audioRef} src="/HanhTrinhRucRo.mp3" loop />
 
       <AnimatePresence>
         {!isOpened && (
-          <WelcomeScreen guestName={guestName} onOpen={handleOpenInvite} />
+          <WelcomeScreen
+            guestName={guestName}
+            ownerName={currentOwner.name}
+            onOpen={handleOpenInvite}
+          />
         )}
       </AnimatePresence>
 
@@ -87,12 +96,16 @@ export default function GraduationPage() {
             />
           </div>
 
-          <MusicPlayer isPlaying={isPlaying} toggleMusic={toggleMusic} />
+          <MusicPlayer
+            isPlaying={isPlaying}
+            toggleMusic={toggleMusic}
+            ownerPhone={currentOwner.phone}
+          />
 
           <InteractiveBackground />
 
           <div className="relative z-10">
-            <HeroSection />
+            <HeroSection ownerName={currentOwner.name} />
 
             <EventDetails guestName={guestName} />
 
@@ -104,13 +117,15 @@ export default function GraduationPage() {
 
             <EventMap />
 
+            <RSVPForm guestName={guestName} ownerName={currentOwner.name} />
+
             <EventCountdown />
 
             <GalleryCarousel images={galleryImages} />
 
             <footer className="bg-[#C62534] py-10 text-center font-serif text-white">
               <h2 className="mb-5 text-3xl font-bold">Hẹn gặp {guestName}!</h2>
-              <p className="opacity-80">Design with ❤️ by DucBunny</p>
+              <p className="text-xs opacity-80">Design with ❤️ by DucBunny</p>
             </footer>
           </div>
         </>

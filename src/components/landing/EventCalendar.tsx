@@ -6,7 +6,7 @@ export default function EventCalendar() {
   const emptyDays = Array.from({ length: 1 }, (_, i) => i) // T2, rỗng
   const targetDay = 27 // Ngày sự kiện diễn ra
   const calendarLink =
-    'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Lễ+Tốt+Nghiệp+HUST+-+Vũ+Ngọc+Đức&dates=20260927T080000Z/20260927T120000Z&details=Kính+mời+đến+dự+lễ+tốt+nghiệp+tại+Đại+học+Bách+Khoa+Hà+Nội&location=Hội+trường+C2,+Nhà+C2,+Bạch+Mai,+Hà+Nội,+Việt+Nam'
+    'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Lễ+Tốt+Nghiệp+HUST+-+Vũ+Ngọc+Đức&dates=20260927T093000Z/20260927T110000Z&details=Kính+mời+đến+dự+lễ+tốt+nghiệp+tại+Đại+học+Bách+Khoa+Hà+Nội&location=Hội+trường+C2,+Nhà+C2,+Bạch+Mai,+Hà+Nội,+Việt+Nam'
 
   return (
     <section className="mx-auto max-w-md px-6 py-16">

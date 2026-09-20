@@ -1,18 +1,27 @@
 import { useState } from 'react'
+import { ownerConfig } from '@/config/owners'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 
 export default function GenerateLinkTool() {
   const [name, setName] = useState('')
   const [generatedLink, setGeneratedLink] = useState('')
+  const [selectedOwner, setSelectedOwner] = useState<string>('default')
 
-  const generateLink = (guestName: string) => {
+  const generateLink = (guestName: string, pathKey: string) => {
     if (!guestName.trim()) return ''
     const encoded = btoa(encodeURIComponent(guestName))
 
-    return `${import.meta.env.VITE_HOST}?g=${encoded}`
+    return `${import.meta.env.VITE_HOST}${pathKey}?g=${encoded}`
   }
 
   const handleGenerate = () => {
-    const link = generateLink(name)
+    const link = generateLink(name, selectedOwner)
     setGeneratedLink(link)
   }
 
@@ -27,6 +36,25 @@ export default function GenerateLinkTool() {
         <h1 className="mb-6 text-2xl font-bold text-gray-800">
           Tool Tạo Link Mời
         </h1>
+
+        <label className="mb-2 block text-sm font-medium text-gray-700">
+          Chọn người mời (Tên hiển thị trên thiệp)
+        </label>
+        <Select value={selectedOwner} onValueChange={setSelectedOwner}>
+          <SelectTrigger className="mb-4 w-full focus:ring-2 focus:ring-[#C62534]">
+            <SelectValue placeholder="Chọn người mời..." />
+          </SelectTrigger>
+          <SelectContent position="popper" align="center">
+            {/* Lặp qua Object.entries để lấy cả key ('d', 'q') và value (object) */}
+            {Object.entries(ownerConfig)
+              .filter(([key]) => key !== 'default')
+              .map(([key, owner]) => (
+                <SelectItem key={key} value={key}>
+                  {owner.name} (Path: /{key})
+                </SelectItem>
+              ))}
+          </SelectContent>
+        </Select>
 
         <label className="mb-2 block text-sm font-medium text-gray-700">
           Tên người được mời (Có dấu bình thường)

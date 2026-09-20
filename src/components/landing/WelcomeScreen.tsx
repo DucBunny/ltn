@@ -3,11 +3,13 @@ import { GraduationCap } from 'lucide-react'
 
 interface WelcomeScreenProps {
   guestName: string
+  ownerName: string
   onOpen: () => void
 }
 
 export default function WelcomeScreen({
   guestName,
+  ownerName,
   onOpen,
 }: WelcomeScreenProps) {
   return (
@@ -16,7 +18,6 @@ export default function WelcomeScreen({
       exit={{ opacity: 0, y: '-100%' }}
       transition={{ duration: 0.8, ease: 'easeInOut' }}
       className="fixed inset-0 z-50 flex items-center justify-center bg-[#C62534] p-4 backdrop-blur-sm">
-      {/* Khung thiệp trắng (Card) */}
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -35,13 +36,18 @@ export default function WelcomeScreen({
               repeat: Infinity,
               ease: 'easeInOut',
             }}
-            className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-[#C62534] shadow-md">
+            className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#C62534] shadow-md">
             <GraduationCap className="h-7 w-7 text-white" />
           </motion.div>
 
+          {/* Tiêu đề Thiệp */}
+          <h2 className="mb-2 text-sm font-bold tracking-widest text-[#C62534] uppercase">
+            Thiệp Mời Tốt Nghiệp
+          </h2>
+
           {/* Tên Người Mời (Chủ nhân bữa tiệc) */}
           <h1 className="mb-4 font-serif text-4xl tracking-wide text-gray-800 md:text-5xl">
-            Vũ Ngọc Đức
+            {ownerName}
           </h1>
 
           {/* Dải phân cách trang trí (~ e ~) */}

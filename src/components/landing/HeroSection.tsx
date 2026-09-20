@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import bkhnSoictLogo from '@/assets/logo/bkhn-soict.png'
 
-export default function HeroSection() {
+export default function HeroSection({ ownerName }: { ownerName: string }) {
   return (
     <section className="relative flex h-screen flex-col items-center justify-center bg-[#FAF8F5] px-4 text-center">
       <motion.div
@@ -19,14 +19,14 @@ export default function HeroSection() {
           Lễ Tốt Nghiệp
         </h2>
         <h1 className="font-serif text-5xl font-bold text-gray-900 uppercase md:text-7xl">
-          Vũ Ngọc Đức
+          {ownerName}
         </h1>
         <div className="my-6 h-1 w-20 bg-yellow-400" />
         <p className="text-md text-gray-500 md:text-xl">
           HEDSPI - Trường CNTT & TT
         </p>
         <p className="text-primary mt-4 font-serif text-2xl font-bold italic">
-          Tháng 9 · 2026
+          9h30 - 11h · 27/9/2026
         </p>
       </motion.div>
 
