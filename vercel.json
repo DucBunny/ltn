@@ -6,7 +6,7 @@
         {
           "type": "header",
           "key": "user-agent",
-          "value": "(?i).*(facebookexternalhit|twitterbot|telegrambot|zalo|whatsapp).*"
+          "value": "(?i).*(facebookexternalhit|facebot|twitterbot|telegrambot|zalo|whatsapp|viber|skype|linkedinbot).*"
         }
       ],
       "destination": "/api/preview"
