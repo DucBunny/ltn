@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-
 import { animate, motion, useInView } from 'framer-motion'
+
+import { Card, CardContent } from '@/components/ui/card'
 
 interface CountUpProps {
   end: number
@@ -45,41 +46,49 @@ export default function JourneyStats() {
         </h3>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-2xl border border-red-100 bg-white/80 px-6 py-8 shadow-sm backdrop-blur">
-            <div className="font-serif text-5xl font-bold text-[#C62534]">
-              <CountUp end={4} />
-            </div>
-            <p className="mt-3 text-sm font-bold tracking-[0.25em] text-gray-700 uppercase">
-              Năm đại học
-            </p>
-          </div>
+          <Card className="border-red-100 bg-white/80 backdrop-blur">
+            <CardContent className="px-6 py-8">
+              <div className="font-serif text-5xl font-bold text-[#C62534]">
+                <CountUp end={4} />
+              </div>
+              <p className="mt-3 text-sm font-bold tracking-[0.25em] text-gray-700 uppercase">
+                Năm đại học
+              </p>
+            </CardContent>
+          </Card>
 
-          <div className="rounded-2xl border border-yellow-300/70 bg-[#fff8dc]/90 px-6 py-8 shadow-sm backdrop-blur">
-            <div className="font-serif text-5xl font-bold text-[#C62534]">
-              <CountUp end={1460} suffix="+" />
-            </div>
-            <p className="mt-3 text-sm font-bold tracking-[0.25em] text-gray-700 uppercase">
-              Ngày nỗ lực
-            </p>
-          </div>
+          <Card className="border-yellow-300/70 bg-[#fff8dc]/90 backdrop-blur">
+            <CardContent className="px-6 py-8">
+              <div className="font-serif text-5xl font-bold text-[#C62534]">
+                <CountUp end={1460} suffix="+" />
+              </div>
+              <p className="mt-3 text-sm font-bold tracking-[0.25em] text-gray-700 uppercase">
+                Ngày nỗ lực
+              </p>
+            </CardContent>
+          </Card>
 
-          <div className="rounded-2xl border border-red-100 bg-white/80 px-6 py-8 shadow-sm backdrop-blur">
-            <div className="font-serif text-5xl font-bold text-[#C62534]">
-              1
-            </div>
-            <p className="mt-3 text-sm font-bold tracking-[0.25em] text-gray-700 uppercase">
-              Tấm bằng
-            </p>
-          </div>
+          <Card className="border-red-100 bg-white/80 backdrop-blur">
+            <CardContent className="px-6 py-8">
+              <div className="font-serif text-5xl font-bold text-[#C62534]">
+                1
+              </div>
+              <p className="mt-3 text-sm font-bold tracking-[0.25em] text-gray-700 uppercase">
+                Tấm bằng
+              </p>
+            </CardContent>
+          </Card>
 
-          <div className="rounded-2xl border border-yellow-300/70 bg-[#C62534] px-6 py-8 text-white shadow-sm">
-            <div className="font-serif text-5xl font-bold">
-              <CountUp end={2026} />
-            </div>
-            <p className="mt-3 text-sm font-bold tracking-[0.25em] text-yellow-200 uppercase">
-              Vô vàn kỷ niệm
-            </p>
-          </div>
+          <Card className="border-yellow-300/70 bg-[#C62534] text-white">
+            <CardContent className="px-6 py-8">
+              <div className="font-serif text-5xl font-bold">
+                <CountUp end={2026} />
+              </div>
+              <p className="mt-3 text-sm font-bold tracking-[0.25em] text-yellow-200 uppercase">
+                Vô vàn kỷ niệm
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </motion.div>
     </section>

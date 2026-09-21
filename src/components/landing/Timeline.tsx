@@ -1,6 +1,8 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
 import Confetti from 'react-confetti'
+import { motion } from 'framer-motion'
+
+import { Badge } from '@/components/ui/badge'
 
 export default function Timeline() {
   const [showConfetti, setShowConfetti] = useState(false)
@@ -76,9 +78,11 @@ export default function Timeline() {
                     ? '-left-3.5 md:-right-3 md:left-auto'
                     : '-left-3.5 md:-left-3'
                 }`}></div>
-              <span className="mb-2 inline-block rounded-full bg-red-100 px-3 py-1 text-sm font-bold text-[#C62534]">
+              <Badge
+                variant="secondary"
+                className="mb-2 bg-red-100 px-3 py-1 text-sm font-bold text-[#C62534]">
                 {item.year}
-              </span>
+              </Badge>
               <h4 className="mb-2 text-xl font-bold text-gray-800">
                 {item.title}
               </h4>

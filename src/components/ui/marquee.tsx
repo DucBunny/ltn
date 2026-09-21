@@ -1,7 +1,8 @@
 'use client'
 
-import type { ComponentType, HTMLAttributes } from 'react'
 import * as FastMarqueeModule from 'react-fast-marquee'
+
+import type { ComponentType, HTMLAttributes } from 'react'
 import type { MarqueeProps as FastMarqueeProps } from 'react-fast-marquee'
 
 import { cn } from '@/lib/utils'

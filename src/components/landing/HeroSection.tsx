@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
+
 import bkhnSoictLogo from '@/assets/logo/bkhn-soict.png'
 
 export default function HeroSection({ ownerName }: { ownerName: string }) {

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
-
 import { motion } from 'framer-motion'
+
+import { Card, CardContent } from '@/components/ui/card'
 
 const eventDate = new Date('2026-09-27T08:00:00+07:00').getTime()
 
@@ -56,16 +57,18 @@ export default function EventCountdown() {
 
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
           {items.map((item) => (
-            <div
+            <Card
               key={item.label}
-              className="rounded-2xl border border-yellow-300/70 bg-white/70 px-4 py-6 shadow-sm backdrop-blur sm:py-8">
-              <div className="font-serif text-5xl font-bold text-[#C62534] sm:text-6xl">
-                {String(item.value).padStart(2, '0')}
-              </div>
-              <div className="mt-3 text-xs font-bold tracking-[0.25em] text-gray-700 uppercase sm:text-sm">
-                {item.label}
-              </div>
-            </div>
+              className="border-yellow-300/70 bg-white/70 backdrop-blur">
+              <CardContent className="px-4 py-6 sm:py-8">
+                <div className="font-serif text-5xl font-bold text-[#C62534] sm:text-6xl">
+                  {String(item.value).padStart(2, '0')}
+                </div>
+                <div className="mt-3 text-xs font-bold tracking-[0.25em] text-gray-700 uppercase sm:text-sm">
+                  {item.label}
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </motion.div>
