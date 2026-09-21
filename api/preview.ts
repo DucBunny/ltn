@@ -41,6 +41,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         <meta property="og:title" content="Thiệp Mời Tốt Nghiệp - ${currentOwner}" />
         <meta property="og:description" content="Trân trọng kính mời ${guestName} đến dự Lễ Tốt Nghiệp - Trường CNTT&TT" />
         <meta property="og:image" content="${imgURL}" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:url" content="${host}${safeId}?g=${g}" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
