@@ -12,7 +12,7 @@ export default function EventMap() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="relative">
-        <Card className="border-t-4 border-[#C62534] bg-white shadow-xl">
+        <Card className="border-0 border-t-4 border-[#C62534] bg-white shadow-xl">
           <CardContent className="p-4 md:p-8">
             <h3 className="mb-2 text-center font-serif text-3xl font-bold tracking-wider text-[#C62534] uppercase">
               Địa điểm tổ chức

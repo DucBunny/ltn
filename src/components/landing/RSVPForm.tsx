@@ -83,7 +83,7 @@ export default function RSVPForm({ guestName, ownerName }: RSVPProps) {
 
   return (
     <section id="rsvp" className="mx-auto max-w-2xl px-4 py-16">
-      <Card className="border-t-4 border-[#C62534] bg-white shadow-xl">
+      <Card className="border-0 border-t-4 border-[#C62534] bg-white shadow-xl">
         <CardContent className="p-6 md:p-8">
           <h3 className="mb-6 text-center font-serif text-3xl font-bold tracking-wider text-[#C62534] uppercase">
             Xác Nhận Tham Dự
